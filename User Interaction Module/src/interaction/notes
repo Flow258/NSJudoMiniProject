@@ -1,0 +1,131 @@
+Update needed do this one by one
+
+in Fee Calculator Class
+1. add a error message for -12323 numbers make it so can only put 1 to up like (weight <=1) --note-- bruh the -zero is shown
+2. / hey dave don't forget to make it so athlete can put number or the plan name can be inputted!
+3. the input weight is buggy fix it
+4. in the Main menu if inputted a word it error fix it
+5. change all double to float for the code to run not laggy
+6. need to make th code looks clean
+7. might as will change the int to byte! for smooth code just for the chooses
+8. name your methods nicely to the class packages
+9. there a bug wen athlete will input a long number like 500kg fix it just add a over weight
+
+not sure
+99. don't forget to add the old members but how?
+    might need some ArrayList
+    i can just re use athlete class
+    what about Serializable?
+    SQL?
+
+
+not seen errors
+
+The com is baggy
+the list is not showing
+++++++++++++++++++++++++++++++++++++++
+
+
+
+
+athlete class
+1. add colors
+
+in Weight Category
+1. the HEAVYWEIGHT don't show so add a new weight like overWeight
+2
+
+in training package nothing is wrong but well see
+1. i use abstract to connect all the plans
+2. you might need to change the double again cause not like user well input a long number.
+3.
+
+
+
+
+
+might add
+
+1. nothing will see
+2. over limit i might add ween a user( kg) will hit over 523kg or 651kg
+3. add color to the texts
+
+
+
+
+
+NEED To ADD to FLOWCHART
+// need Update
+
+1.  in The inputed name of athlete is (only letters)
+2.  the Competitions input have change it only (1 to 0) now
+3. Texts Colors
+4. Bugs like not saving, name can be a numbers, the main menu hava no error message for the letters.
+5. new weight limit
+6. the letters only in the name
+7. the new updated saving and loading logic using Serializable
+8. the limiter
+9. and i did implements Serializable on all the classes
+10.
+
+
+
+
+
+
+
+
+Follow this algorithm
+
+1. Start
+2. Showing Additional Information of the Training Plan - Prices and Weight Categories, Showing in Table using System.out.println("");
+3. Title NSJudo fees Calculator
+4. Show Menu Options
+   – (1) register a new Athlete
+   – (2) show All Athletes and list of all costs for the month
+   – (3) exit
+5. Enter you're choose
+6. case the user chooses option (1)
+7. Enter your name
+8. Enter the current weight (kg)
+	If weight > 100 kg → Heavyweight
+	If 91 kg ≤ weight ≤ 100 kg → Light-Heavyweight
+	If 81 kg ≤ weight ≤ 90 kg → Middleweight
+	If 73 kg ≤ weight ≤ 80 kg → Light-Middleweight
+	If 66 kg ≤ weight ≤ 72 kg → Lightweight
+	If weight ≤ 66 kg → Flyweight
+		 – If valid input print "wrong input try again" go to step 10
+   	   	 – If correct go to step 9
+   9. Enter a number to select the training plan
+      – (1) Beginners
+      – (2) Intermediate
+      – (3) Elite
+      – If user input is wrong print "wrong input try again" go to step 8
+      – If correct go to step 9
+10. if user pick (1)
+11. Confirm the selected training plan
+12. If training plan is Beginner, the message will print "Beginners are not allowed in the competition"
+13. Enter the number of hours of private coaching (0 to 5)
+    	    		 – If the input is wrong print "Error massage" go to step 13
+   	    		 – If correct go to step 18
+14. if user pick (2 || 3)
+15. Confirm the selected training plan
+	16. Enter the current weight (kg)
+		If weight > 100 kg → Heavyweight
+		If 91 kg ≤ weight ≤ 100 kg → Light-Heavyweight
+		If 81 kg ≤ weight ≤ 90 kg → Middleweight
+		If 73 kg ≤ weight ≤ 80 kg → Light-Middleweight
+		If 67 kg ≤ weight ≤ 72 kg → Lightweight
+		If weight ≤ 66 kg → Flyweight
+   	    		– If valid input print "wrong input try again" go to step 17
+   	     		– If correct go to step 18
+17. Enter the number of competitions you will enter this month
+    – If the input is wrong go to step 11
+    – If correct go to step 18
+18. The new athlete will be calculated and displayed on the list with Weight Categories, Training Plan, Training Fee for Month, Private Coaching Fee for Month, Total Competition Fee, Total Cost for the Month, Athlete ID No, Athlete name and check if Weight Category Status is under limit || exact limit.
+19. The new athlete added to the list with information's displayed and go to step 4
+20. case the user chooses option (2)
+    21. Show all athletes Lists and go to step 4
+22. case the user chooses option (3)
+    23. Exit the Code.
+24. End

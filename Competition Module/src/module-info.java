@@ -1,0 +1,4 @@
+module moduleCompetition {
+
+    exports competition;
+}

@@ -1,0 +1,4 @@
+module modulePrivateCoaching {
+
+    exports coaching;
+}

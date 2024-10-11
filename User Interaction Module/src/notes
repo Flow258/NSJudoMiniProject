@@ -1,0 +1,15 @@
+Notes for feeCalculator Class
+The FeeCalculator class will handle registration and other info of athletes taking part in a training program. The athlete data can be serialized with the help of Serializable interface implementation. A static final field, serialVersionUID, is included in the class used in serialization purposes. It also defines several ANSI color codes as static final strings for manipulating console output, such as ANSI_RESET, ANSI_YELLOW, etc..
+Volley’s main method is an entry point of the application. It starts a Scannerfor user input and a list to hold Athlete objects. The method loads previously saved athletes from the athletes.dat file and shows title and Handling user input for adding an athlete, accessing all athletes, or exiting the program, is done through use of a loop.
+
+The getName(Scanner input) method is called to input an athletes name and validate that only letters are used. A regular expression is used by the isValidName(String name) to validate name, which is a method.
+
+getWeight(Scanner input) prompts the user to input athlete’s weight and ensures the weight is a positive float. The getTrainingPlan(Scanner input) method lets the user pick a training plan number or the plan name and return the associated TrainingPlan object.
+
+getNumCompetitions(Scanner input, TrainingPlan trainingPlan) checks the athlete’s training plan and asks them how many competitions they intend to enter, with code that restricts beginners to either 0 or 1. getPrivateCoachingHours(Scanner input) prompts the user to input the number of hours for private coaching but limits the number to 0...5.
+
+addAthlete(List<Athlete> athletes, Scanner input) reads all needed details to create a new Athlete and adds it to the list. The saveAthletes(List<Athlete> athletes) writes the list of athletes into the file athletes.dat, and the loadAthletes(List<Athlete> athletes) reads the file athletes.dat and has a list of previously autored athletes.
+
+In the mainMenu() method, main menu options are displayed, and in the ShowingMembers(List<Athlete> athletes) method we iterate through the list of athletes and display athletes' information using the displayAthleteInformation method from the Athlete class.
+
+The displayTitle() and displayInformation() methods write the title and description of training plans and weight categories by using ANSI color codes for formatting.

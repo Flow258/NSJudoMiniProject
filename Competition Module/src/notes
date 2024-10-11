@@ -1,0 +1,14 @@
+Notes for competition Clas
+The Competition class is supposed to be a competition instance and implements Serializable
+interface for the object serialization. This contains a static final field serialVersionUID,
+used to make sure the serialized object can be re deserialized. The field numCom type byte
+represents the competition number, and has its own class variable. In addition there is a
+field trainingPlan, a String that is the training plan associated with the competition.
+Also defined by the class are the following methods:
+
+1. A static final field COMPETITION_FEE of 22.00f with the meaning of the fee to participate in a competition.
+The constructor of the Competition class takes two parameters: It initializes numCom and trainingPlan
+and the respective fields. In the calculateFee() method the total fee for the competition is computed
+from the training plan. The method returns the product of numCom and COMPETITION_FEE if trainingPlan
+is either "Intermediate" or "Elite". If the training plan does not satisfy these criteria then the method
+returns 0.0f or no fee from other training plans.

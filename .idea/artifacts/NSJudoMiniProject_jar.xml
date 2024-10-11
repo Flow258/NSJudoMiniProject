@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact name="NSJudoMiniProject:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/NSJudoMiniProject_jar</output-path>
+    <root id="root">
+      <element id="archive" name="NSJudoMiniProject.jar">
+        <element id="module-output" name="NSJudoMiniProject" />
+        <element id="module-output" name="moduleAthlete" />
+        <element id="module-output" name="moduleTrainingPlan" />
+        <element id="module-output" name="moduleCompetition" />
+        <element id="module-output" name="modulePrivateCoaching" />
+        <element id="module-output" name="moduleUserInteraction" />
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,9 @@
+Private Coaching Class Notes
+PrivateCoaching class is meant to implement Serializable interface for object serialization
+and represents a private coaching service. It carries a static final field serialVersionUID
+that is used to ensure that this serialized object can be deserialized. numHours is a final
+field of type byte, that represents the number of hours of coaching the class offers. Also,
+it contains a static field HOURLY_RATE, // 9.00f to be precise, for coaching services.
+The argument numHours is a parameter of the PrivateCoaching constructor which initializes
+one of the fields. In calculateFee(numsHours) we multiply the number of hours (numHours) by
+HOURLY_RATE and multiple this by 4 to represent 1 month of coaching at weekly rate.

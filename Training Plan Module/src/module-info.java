@@ -1,0 +1,4 @@
+module moduleTrainingPlan {
+
+    exports training;
+}

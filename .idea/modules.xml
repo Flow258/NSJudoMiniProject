@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/NSJudoMiniProject.iml" filepath="$PROJECT_DIR$/NSJudoMiniProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Athlete Management Module/moduleAthlete.iml" filepath="$PROJECT_DIR$/Athlete Management Module/moduleAthlete.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Competition Module/moduleCompetition.iml" filepath="$PROJECT_DIR$/Competition Module/moduleCompetition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Private Coaching Module/modulePrivateCoaching.iml" filepath="$PROJECT_DIR$/Private Coaching Module/modulePrivateCoaching.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Training Plan Module/moduleTrainingPlan.iml" filepath="$PROJECT_DIR$/Training Plan Module/moduleTrainingPlan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/User Interaction Module/moduleUserInteraction.iml" filepath="$PROJECT_DIR$/User Interaction Module/moduleUserInteraction.iml" />
+    </modules>
+  </component>
+</project>

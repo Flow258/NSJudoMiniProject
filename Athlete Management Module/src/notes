@@ -1,0 +1,30 @@
+Notes for Athlete Class
+Athlete class is used to represent an athlete and serialization of the object using
+Serializable interface. That includes serializer.includeSerizialVersionUID; a static
+final field serialVersionUID used to ensure that the serialized object can be properly
+de-serialized. A number of ANSI color codes are defined by the class as static final
+strings, which are used to format console output, such as ANSI_YELLOW, ANSI_CYAN,
+and ANSI_RED_BACKGROUND.
+
+The class has several fields:
+name, a transient string representing the name of the athlete (without being serialized).
+
+float currentWeight which represents the weight of the athlete in the current bottle.
+
+A WeightCategory instance, weightCategory, that groups the athlete by weight.
+
+An instance of TrainingPlan that holds the athletes training plan...named trainingPlan.
+
+competition, a Competition instance representing the Athlete’s competition, limited to elite and intermediate categories.
+
+PrivateCoaching(0, 5) # an instance of PrivateCoaching that supports a certain number of coaching hours(0…5).
+
+The Athlete class uses the WeightCategory.getCategory(currentWeight) method to determine the athlete’s
+weight category and sets then initialized these fields. We can implement the calculateTotalCost() method
+to get the total amount the athlete needs to pay by adding together the fees from trainings plan,
+competition and private coaching.The getWeightCategory() method is used by us to calculate and to return
+a string indicating that the athlete's weight status with regard to their weight category. It checks
+if the athlete is near the limit, past the limit, or below the limit, and outputs the format specifying
+a special message if the athlete is really over the limit.The displayAthleteInformation(long athleteNumber)
+method prints athlete’s information to the console: ID number, name, current weight, training plan, fees,
+total cost, weight category, weight status etc, using ANSI color codes to format them.
