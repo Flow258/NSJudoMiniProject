@@ -8,8 +8,7 @@ public class ElitePlan extends TrainingPlan implements Serializable {
 
     @Override
     public String getPlanName() {
-
-        return "Elite"; // this to
+        return "Elite";
     }
 
     @Override

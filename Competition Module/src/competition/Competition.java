@@ -3,7 +3,6 @@ package competition;
 import java.io.Serializable;
 
 public class Competition implements Serializable {
-    private static final long serialVersionUID = 1;
     private byte numCom; // Competition Number
     private String trainingPlan;
     private static final float COMPETITION_FEE = 22.00f;

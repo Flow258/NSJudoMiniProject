@@ -8,7 +8,6 @@ public class BeginnerPlan extends TrainingPlan implements Serializable {
 
     @Override
     public String getPlanName() {
-
         return "Beginner"; // need to create a switch of if (1) option or just "Beginner"
     }
 

@@ -1,17 +1,39 @@
 package athlete;
 
-import java.io.Serializable;
-
 public enum WeightCategory {
 
     FLYWEIGHT(66), LIGHTWEIGHT(73),
     LIGHT_MIDDLEWEIGHT(81), MIDDLEWEIGHT(90),
-    LIGHT_HEAVYWEIGHT(100), HEAVYWEIGHT(200),
+    LIGHT_HEAVYWEIGHT(100), HEAVYWEIGHT(199),
     OVERWEIGHT(Float.MAX_VALUE);
     //OVERWEIGHT(Float.MAX_VALUE);
 
     private final float upperLimit;
 
+
+    WeightCategory(float upperLimit) {
+        this.upperLimit = upperLimit;
+    }
+
+    public float getUpperLimit() {
+        return upperLimit;
+    }
+
+    public static WeightCategory getCategory(float weight) {
+        for (WeightCategory category : WeightCategory.values()) {
+            if (weight <= category.upperLimit) {
+                return category;
+            }
+        }
+        return HEAVYWEIGHT; // if no category matches to the input
+    }
+
+    @Override
+    public String toString() {
+        return this.name() + " (up to " + this.upperLimit + " kg)";
+    }
+
+    /*
     // Constructor
     WeightCategory(float upperLimit) {
         this.upperLimit = upperLimit;
@@ -36,5 +58,6 @@ public enum WeightCategory {
     public String toString() {
         return this.name() + " (up to " + this.upperLimit + " kg)";
     }
+     */
 }
 
