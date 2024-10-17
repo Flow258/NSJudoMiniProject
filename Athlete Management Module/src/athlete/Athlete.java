@@ -29,13 +29,13 @@ public class Athlete implements Serializable {
     public static final String ANSI_RED_BACKGROUND
             = "\u001B[41m";
 
-    transient private String name; // Athlete name
-    private float currentWeight; // Athlete given Weight
-    private WeightCategory weightCategory; // Categorizing the athlete given weight
+    transient final private String name; // Athlete name
+    private final float currentWeight; // Athlete given Weight
+    private final WeightCategory weightCategory; // Categorizing the athlete given weight
     //private String athleteCategory;
-    private TrainingPlan trainingPlan; // Athlete plan
-    private Competition competition; // Com need to allow only elite and Intermediate
-    private PrivateCoaching privateCoaching; // add (0 to 5) only allowed
+    private final TrainingPlan trainingPlan; // Athlete plan
+    private final Competition competition; // Com need to allow only elite and Intermediate
+    private final PrivateCoaching privateCoaching; // add (0 to 5) only allowed
 
     // constructor for athlete
     public Athlete(String name, /*String athleteCategory,*/ float currentWeight, TrainingPlan trainingPlan,

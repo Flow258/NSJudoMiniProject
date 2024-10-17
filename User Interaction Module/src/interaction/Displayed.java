@@ -10,10 +10,6 @@ public class Displayed {
 
     // Custom declaration and Declaring the color
     public static final String ANSI_YELLOW = "\u001B[33m"; //Yellow text color
-    public static final String ANSI_CYAN = "\u001B[36m"; //Cyan text color
-    public static final String ANSI_GREEN = "\u001B[32m"; // Green
-    public static final String ANSI_RED = "\u001B[31m"; // Red
-    public static final String ANSI_BLUE = "\u001B[34m"; // Vlue text
 
     public static void ShowingMembers(List<Athlete> athletes) {
         System.out.println(ANSI_YELLOW +"\nRegistered Athletes:" + ANSI_RESET);

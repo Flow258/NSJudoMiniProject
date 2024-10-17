@@ -3,8 +3,8 @@ package competition;
 import java.io.Serializable;
 
 public class Competition implements Serializable {
-    private byte numCom; // Competition Number
-    private String trainingPlan;
+    private final byte numCom; // Competition Number
+    private final String trainingPlan;
     private static final float COMPETITION_FEE = 22.00f;
 
     public Competition(byte numCom, String trainingPlan) {
