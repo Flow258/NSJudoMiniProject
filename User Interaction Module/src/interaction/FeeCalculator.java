@@ -4,6 +4,7 @@ package interaction;
 import athlete.Athlete;
 
 // the needed util to make the old members
+import java.io.Serial;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,9 +13,10 @@ import java.util.Scanner;
 import java.io.Serializable;
 
 import static athlete.Athlete.*;
-import static interaction.Displayer.*;
+import static interaction.Displayed.*;
 
 public class FeeCalculator implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1;
 
     // Declaring ANSI_RESET so that we can reset the color

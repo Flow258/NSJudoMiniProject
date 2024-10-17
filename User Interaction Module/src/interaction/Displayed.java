@@ -4,7 +4,7 @@ import athlete.Athlete;
 
 import java.util.List;
 
-public class Displayer {
+public class Displayed {
     // Declaring ANSI_RESET so that we can reset the color
     public static final String ANSI_RESET = "\u001B[0m";
 

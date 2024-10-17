@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Athlete implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1;
 
     // Declaring ANSI_RESET so that we can reset the color

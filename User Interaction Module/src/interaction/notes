@@ -49,6 +49,7 @@ might add
 1. nothing will see
 2. over limit i might add ween a user( kg) will hit over 523kg or 651kg
 3. add color to the texts
+4. Competition Weight Category is needed to be add! i might
 
 
 
@@ -66,7 +67,7 @@ NEED To ADD to FLOWCHART
 7. the new updated saving and loading logic using Serializable
 8. the limiter
 9. and i did implements Serializable on all the classes
-10.
+10. Competition Weight Category is needed to be add!
 
 
 
