@@ -4,12 +4,14 @@ import athlete.Athlete;
 
 import java.util.List;
 
-public class Displayed {
+public class Display {
     // Declaring ANSI_RESET so that we can reset the color
     public static final String ANSI_RESET = "\u001B[0m";
 
     // Custom declaration and Declaring the color
     public static final String ANSI_YELLOW = "\u001B[33m"; //Yellow text color
+    public static final String ANSI_CYAN = "\u001B[36m"; //Cyan text color
+    public static final String ANSI_GREEN = "\u001B[32m"; // Green
 
     public static void ShowingMembers(List<Athlete> athletes) {
         System.out.println(ANSI_YELLOW +"\nRegistered Athletes:" + ANSI_RESET);
@@ -18,6 +20,14 @@ public class Displayed {
             athletes.get(i).displayAthleteInformation(i + 1); // Displaying each athlete information
         }
         System.out.println(ANSI_YELLOW +"\n========================================"+ ANSI_RESET);
+    }
+
+    public static void mainMenu() {
+        System.out.println(ANSI_CYAN +"\nMenu Options:"+ ANSI_RESET);
+        System.out.println(ANSI_CYAN +"1. Register a New Athlete"+ ANSI_RESET);
+        System.out.println(ANSI_CYAN +"2. Display All Athletes"+ ANSI_RESET);
+        System.out.println(ANSI_CYAN +"3. Exit");
+        System.out.println(ANSI_GREEN +"Enter your option: "+ ANSI_RESET);
     }
 
     public static void displayTitle() {

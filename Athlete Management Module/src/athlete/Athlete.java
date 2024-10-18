@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Athlete implements Serializable {
-    @Serial
     private static final long serialVersionUID = 1;
 
     // Declaring ANSI_RESET so that we can reset the color
@@ -64,7 +63,7 @@ public class Athlete implements Serializable {
         if (weightDifference == 0) {
             return "At exact limit of " + weightCategory;
         } else if (weight > 650) {
-            return String.format(ANSI_RED_BACKGROUND + "%.1f kg over %s You are the Heaviest human alive" + ANSI_RESET, weightDifference, weightCategory);
+            return String.format(ANSI_RED_BACKGROUND + "%.1f kg over %s. Heaviest recorded weight." + ANSI_RESET, weightDifference, weightCategory);
         } else {
             return String.format("%.1f kg under %s limit", weightDifference, weightCategory);
         }
@@ -108,21 +107,20 @@ public class Athlete implements Serializable {
         }
     }
 
-    // hey dave dont forget to make it so athlete can put number or the plan name can be inputted!
     public static TrainingPlan getTrainingPlan(Scanner input) {
         System.out.print(ANSI_CYAN +"Training Plans " + "\n(1)Beginner" + "\n(2)Intermediate" + "\n(3)Elite" + ANSI_RESET +
                 ANSI_GREEN + "\nEnter your plan: " + ANSI_RESET);
         while (true) {
             String userInput = input.next();
-            switch (userInput) {
+            switch (userInput.toLowerCase()) {
                 case "1":
-                case "Beginner":
+                case "beginner":
                     return new BeginnerPlan();
                 case "2":
-                case "Intermediate":
+                case "intermediate":
                     return new IntermediatePlan();
                 case "3":
-                case "Elite":
+                case "elite":
                     return new ElitePlan();
                 default:
                     System.out.print(ANSI_RED + "Invalid training plan. enter (Beginner(1)/Intermediate(2)/Elite(3)): " + ANSI_RESET);

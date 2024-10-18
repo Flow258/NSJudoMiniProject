@@ -13,10 +13,9 @@ import java.util.Scanner;
 import java.io.Serializable;
 
 import static athlete.Athlete.*;
-import static interaction.Displayed.*;
+import static interaction.Display.*;
 
 public class FeeCalculator implements Serializable {
-    @Serial
     private static final long serialVersionUID = 1;
 
     // Declaring ANSI_RESET so that we can reset the color
@@ -25,8 +24,6 @@ public class FeeCalculator implements Serializable {
     // Custom declaration && Declaring the color
     public static final String ANSI_RED = "\u001B[31m"; // Red
     public static final String ANSI_BLUE = "\u001B[34m"; // Vlue text
-    public static final String ANSI_CYAN = "\u001B[36m"; //Cyan text color
-    public static final String ANSI_GREEN = "\u001B[32m"; // Green
 
     // make the code short ass possible and Looks clean and show the Menu
     public static void main(String[] args) {
@@ -37,11 +34,7 @@ public class FeeCalculator implements Serializable {
         displayTitle();
 
         while (true) {
-            System.out.println(ANSI_CYAN +"\nMenu Options:"+ ANSI_RESET);
-            System.out.println(ANSI_CYAN +"1. Register a New Athlete"+ ANSI_RESET);
-            System.out.println(ANSI_CYAN +"2. Display All Athletes"+ ANSI_RESET);
-            System.out.println(ANSI_CYAN +"3. Exit");
-            System.out.println(ANSI_GREEN +"Enter your option: "+ ANSI_RESET);
+            mainMenu();
             if (input.hasNextByte()) { // Check if the input is a byte
                 byte choice = input.nextByte(); // input
                 input.nextLine(); // Consume newline

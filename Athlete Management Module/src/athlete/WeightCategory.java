@@ -6,10 +6,8 @@ public enum WeightCategory {
     LIGHT_MIDDLEWEIGHT(81), MIDDLEWEIGHT(90),
     LIGHT_HEAVYWEIGHT(100), HEAVYWEIGHT(199),
     OVERWEIGHT(Float.MAX_VALUE);
-    //OVERWEIGHT(Float.MAX_VALUE);
 
     private final float upperLimit;
-
 
     WeightCategory(float upperLimit) {
         this.upperLimit = upperLimit;
@@ -32,7 +30,7 @@ public enum WeightCategory {
     public String toString() {
         return this.name() + " (up to " + this.upperLimit + " kg)";
     }
-
+}
     /*
     // Constructor
     WeightCategory(float upperLimit) {
@@ -59,5 +57,5 @@ public enum WeightCategory {
         return this.name() + " (up to " + this.upperLimit + " kg)";
     }
      */
-}
+
 
