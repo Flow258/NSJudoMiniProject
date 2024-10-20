@@ -5,7 +5,7 @@ public enum WeightCategory {
     FLYWEIGHT(66), LIGHTWEIGHT(73),
     LIGHT_MIDDLEWEIGHT(81), MIDDLEWEIGHT(90),
     LIGHT_HEAVYWEIGHT(100), HEAVYWEIGHT(199),
-    OVERWEIGHT(Float.MAX_VALUE);
+    OVERWEIGHT(700);
 
     private final float upperLimit;
 

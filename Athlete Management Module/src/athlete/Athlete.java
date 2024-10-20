@@ -28,25 +28,26 @@ public class Athlete implements Serializable {
     public static final String ANSI_RED_BACKGROUND
             = "\u001B[41m";
 
-    transient private String name; // Athlete name
-    private float currentWeight; // Athlete given Weight
-    private WeightCategory weightCategory; // Categorizing the athlete given weight
-    //private String athleteCategory;
-    private TrainingPlan trainingPlan; // Athlete plan
-    private Competition competition; // Com need to allow only elite and Intermediate
-    private PrivateCoaching privateCoaching; // add (0 to 5) only allowed
+    transient final private String name; // Athlete name
+    private final float currentWeight;// Athlete given Weight
+    private final float athleteCategory;
+
+    private final WeightCategory weightCategory; // Categorizing the athlete given weight2
+    private final TrainingPlan trainingPlan; // Athlete plan
+    private final Competition competition; // Com need to allow only elite and Intermediate
+    private final PrivateCoaching privateCoaching; // add (0 to 5) only allowed
 
     // constructor for athlete
-    public Athlete(String name, /*String athleteCategory,*/ float currentWeight, TrainingPlan trainingPlan,
+    public Athlete(String name, float athleteCategory, float currentWeight, TrainingPlan trainingPlan,
                    Competition competition, PrivateCoaching privateCoaching) {
 
         this.name = name;
-        //this.athleteCategory = athleteCategory;
         this.currentWeight = currentWeight;
+        this.athleteCategory = athleteCategory;
         this.trainingPlan = trainingPlan;
         this.competition = competition;
         this.privateCoaching = privateCoaching;
-        this.weightCategory = WeightCategory.getCategory(currentWeight);
+        this.weightCategory = WeightCategory.getCategory(athleteCategory);
     }
 
     // Calculating the total amount the athlete need to pay
@@ -64,6 +65,8 @@ public class Athlete implements Serializable {
             return "At exact limit of " + weightCategory;
         } else if (weight > 650) {
             return String.format(ANSI_RED_BACKGROUND + "%.1f kg over %s. Heaviest recorded weight." + ANSI_RESET, weightDifference, weightCategory);
+        } else if (weightDifference < 0) {
+            return String.format(ANSI_RED_BACKGROUND + "%.1f kg over %s. limit." + ANSI_RESET, weightDifference, weightCategory);
         } else {
             return String.format("%.1f kg under %s limit", weightDifference, weightCategory);
         }
@@ -84,6 +87,79 @@ public class Athlete implements Serializable {
 
     private static boolean isValidName(String name) {
         return name.matches("[a-zA-Z ]+"); // Regex to allow only letters just see this in google
+    }
+  /*
+    public static WeightCategory gertCategory(Scanner input) {
+        while (true) {
+            String userInput = input.next();
+            switch (userInput.toLowerCase().trim()) {
+                case "1":
+                case "flyweight":
+                    return WeightCategory.FLYWEIGHT;
+                case "2":
+                case "lightweight":
+                    return WeightCategory.LIGHTWEIGHT;
+                case "3":
+                case "light middleweight":
+                    return WeightCategory.LIGHT_MIDDLEWEIGHT;
+                case "4":
+                case "middleweight":
+                    return WeightCategory.MIDDLEWEIGHT;
+                case "5":
+                case "light heavyweight":
+                    return WeightCategory.LIGHT_HEAVYWEIGHT;
+                case "6":
+                case "heavyweight":
+                    return WeightCategory.HEAVYWEIGHT;
+                case "7":
+                case "overweight":
+                    return WeightCategory.OVERWEIGHT;
+                default:
+                    System.out.print(ANSI_RED + "Invalid. enter the correct input " + ANSI_RESET);
+            }
+        }
+    }
+
+   */
+
+    public static float getCategory(Scanner input) {
+        while (true) {
+            System.out.println(ANSI_YELLOW +
+                    "   ==========================================================="+ ANSI_RESET);
+            System.out.println(ANSI_YELLOW +
+                    "   | Weight Categories             | Upper Weight Limit (kg) |"+ ANSI_RESET);
+            System.out.println(ANSI_YELLOW +
+                    "   ==========================================================="+ ANSI_RESET);
+            System.out.println(ANSI_YELLOW +
+                    "   | Heavyweight                   | Unlimited (Over 100)    |"+ ANSI_RESET);
+            System.out.println(ANSI_YELLOW +
+                    "   | Light-Heavyweight             | 100                     |"+ ANSI_RESET);
+            System.out.println(ANSI_YELLOW +
+                    "   | Middleweight                  | 90                      |"+ ANSI_RESET);
+            System.out.println(ANSI_YELLOW +
+                    "   | Light-Middleweight            | 81                      |"+ ANSI_RESET);
+            System.out.println(ANSI_YELLOW +
+                    "   | Lightweight                   | 73                      |"+ ANSI_RESET);
+            System.out.println(ANSI_YELLOW +
+                    "   | Flyweight                     | 66                      |"+ ANSI_RESET);
+            System.out.println(ANSI_YELLOW +
+                    "   ==========================================================="+ ANSI_RESET);
+            System.out.println(ANSI_GREEN + "Enter the category(kg): " + ANSI_RESET);
+            // Check if the next input is a float
+            if (input.hasNextFloat()) {
+                float categoryNum = input.nextFloat();
+
+                // Check if the weight is valid
+                if (categoryNum >= 1) {
+                    return categoryNum; // Return valid weight
+                } else {
+                    System.out.println(ANSI_RED +"Invalid input. category need to be same to the list." + ANSI_RESET);
+                }
+            } else {
+                System.out.println(ANSI_RED + "Invalid input. Please enter a valid number." + ANSI_RESET);
+                input.next(); // Clear the invalid input
+            }
+        }
     }
 
     // to get the user inputted data
@@ -186,13 +262,15 @@ public class Athlete implements Serializable {
 
     public static void setAthlete(List<Athlete> athletes, Scanner input) {
         String athleteName = getName(input);
-        // String athleteCategory = getAhtleteCategory(input);
+        //String athleteCategory = getAhtleteCategory(input);
         TrainingPlan trainingPlan = getTrainingPlan(input);
+       // WeightCategory category = gertCategory(input);
+        float athleteCategory = getCategory(input);
         float currentWeight = getWeight(input);
         Competition competition = new Competition(getNumCompetition(input, trainingPlan), trainingPlan.getPlanName());
         PrivateCoaching privateCoaching = new PrivateCoaching(getPrivateCoachingHours(input));
 
-        Athlete athlete = new Athlete(athleteName,/* athleteCategory,*/ currentWeight, trainingPlan, competition, privateCoaching);
+        Athlete athlete = new Athlete(athleteName, athleteCategory, currentWeight, trainingPlan, competition, privateCoaching);
         athletes.add(athlete); // add athlete to the list
         System.out.println(ANSI_BLUE + "Athlete added successfully." + ANSI_RESET);
     }

@@ -37,7 +37,7 @@ public class FeeCalculator implements Serializable {
             mainMenu();
             if (input.hasNextByte()) { // Check if the input is a byte
                 byte choice = input.nextByte(); // input
-                input.nextLine(); // Consume newline
+                input.nextLine(); // Consume new1line
 
                 switch (choice) {
                     case 1:
