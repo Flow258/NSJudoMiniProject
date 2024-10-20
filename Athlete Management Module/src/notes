@@ -55,3 +55,9 @@ public static void loadAthletes(List<Athlete> athletes) {
         }
     }
 }
+
+Object verification We first read the object from the file and check if it’s an instance of List<?>. This ensures that the file indeed contains a list.
+
+Type checking Each element of the list is then checked if it is an instance of Athlete. This avoids potential ClassCastException.
+
+Safe casting After verification, we safely cast the objects to Athlete and add them to the list.
