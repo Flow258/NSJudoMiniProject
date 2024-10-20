@@ -96,7 +96,7 @@ Follow this algorithm
 	If 66 kg ≤ weight ≤ 72 kg → Lightweight
 	If weight ≤ 66 kg → Flyweight
 		 – If valid input print "wrong input try again" go to step 10
-   	   	 – If correct go to step 9
+   	   	 – If  correct go to step 9
    9. Enter a number to select the training plan
       – (1) Beginners
       – (2) Intermediate

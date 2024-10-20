@@ -16,6 +16,7 @@ import static athlete.Athlete.*;
 import static interaction.Display.*;
 
 public class FeeCalculator implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1;
 
     // Declaring ANSI_RESET so that we can reset the color

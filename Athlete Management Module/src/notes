@@ -27,4 +27,31 @@ a string indicating that the athlete's weight status with regard to their weight
 if the athlete is near the limit, past the limit, or below the limit, and outputs the format specifying
 a special message if the athlete is really over the limit.The displayAthleteInformation(long athleteNumber)
 method prints athlete’s information to the console: ID number, name, current weight, training plan, fees,
-total cost, weight category, weight status etc, using ANSI color codes to format them.
+total cost, weight category, weight status etc, using ANSI color codes to format them.\
+
+
+
+
+this could work?
+// Method to load athletes from the file athletes.dat
+public static void loadAthletes(List<Athlete> athletes) {
+    File fileIn = new File("athletes.dat"); // this is the file path
+    if (fileIn.exists()) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileIn))) {
+            Object obj = ois.readObject(); // Read the object from the file
+            if (obj instanceof List<?>) {
+                List<?> loadedAthletes = (List<?>) obj; // Safely cast to List
+                for (Object item : loadedAthletes) {
+                    if (item instanceof Athlete) {
+                        athletes.add((Athlete) item); // Safe cast to Athlete
+                    }
+                }
+                System.out.println(ANSI_BLUE + "Athletes loaded successfully." + ANSI_RESET);
+            } else {
+                System.out.println(ANSI_RED + "Error: File does not contain a list of athletes." + ANSI_RESET);
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println(ANSI_RED + "Error loading athletes: " + e.getMessage() + ANSI_RESET);
+        }
+    }
+}

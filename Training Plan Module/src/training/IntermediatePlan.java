@@ -4,6 +4,7 @@ import java.io.Serial;
 import java.io.Serializable;
 
 public class IntermediatePlan extends TrainingPlan implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1;
     private static final float FEE = 30.00f;
 
