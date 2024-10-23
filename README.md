@@ -8,10 +8,10 @@ This manual is written to help you use the system step by step.
 ---
 
  Table of Contents
-1. # 1 getting started
-2. [System Menu](#2-system-menu)
-3. But the registration of [an athlete](#3-athlete-registration)
-4. 4. Displaying All Athletes (See All Athletes)
+getting started
+1. [System Menu](#2-system-menu)
+2. But the registration of [an athlete](#3-athlete-registration)
+3. 4. Displaying All Athletes (See All Athletes)
 
 ### Topic:
 ### Rows:
@@ -133,16 +133,16 @@ Example output:
 ```
 ========================================
 Athlete ID No: 1
-Athlete						: Dave
-Current Weight				: 88.5 kg
-Training Plan					: Intermediate
-Training Fee For Month			: $120.00
+Athlete						                  : Dave
+Current Weight				             : 88.5 kg
+Training Plan					             : Intermediate
+Training Fee For Month			      : $120.00
 Private Coaching Fee For Month	: $108.00
-Total Competition Fee			: $22.00
-Total Cost for the Month		: $250.00
-Weight Category				: Middleweight
-Weight Status					: 1.5 kg under Middleweight limit
-===
+Total Competition Fee		       	: $22.00
+Total Cost for the Month	     	: $250.00
+Weight Category			            	: Middleweight
+Weight Status					             : 1.5 kg under Middleweight limit
+========================================
 ```
 
 ---
